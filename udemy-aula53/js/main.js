@@ -28,6 +28,10 @@ ELEMENTOS.forEach(function (elemento) {
     const text = elemento.text
 
     const tagCreated = document.createElement(tag)
+    //Outra forma (melhor)
+    //const textNode = document.createTextNode(text)
+    //tagCreated.appendChild(textNode)
+    //No lugar das duas linhas abaixo
     tagCreated.textContent = text
     div.appendChild(tagCreated)
 });
