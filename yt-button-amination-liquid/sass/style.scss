@@ -1,0 +1,11 @@
+@import "_variables.scss";
+@import "_mixins.scss";
+@import "_reset.scss";
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+
+body {
+    height: 100vh;
+    width: 100vw;
+    @include flex-center;
+}
