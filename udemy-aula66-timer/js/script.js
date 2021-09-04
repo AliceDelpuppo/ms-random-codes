@@ -22,19 +22,43 @@ function startClock() {
     }, 1000);
 }
 
-$buttonStart.addEventListener('click', function () {
-    startClock()
-    $clock.classList.remove('paused')
-})
+// $buttonStart.addEventListener('click', function () {
+//     startClock()
+//     $clock.classList.remove('paused')
+// })
 
-$buttonPause.addEventListener('click', function () {
-    clearInterval(timer)
-    $clock.classList.add('paused')
-})
+// $buttonPause.addEventListener('click', function () {
+//     clearInterval(timer)
+//     $clock.classList.add('paused')
+// })
 
-$buttonReset.addEventListener('click', function(){
-    clearInterval(timer)
-    $clock.textContent = '00:00:00'
-    seconds = 0
-    $clock.classList.remove('paused')
+// $buttonReset.addEventListener('click', function(){
+//     clearInterval(timer)
+//     $clock.textContent = '00:00:00'
+//     seconds = 0
+//     $clock.classList.remove('paused')
+// })
+
+
+// Outra forma
+
+document.addEventListener('click', function(event){
+    const element = event.target // diz em que lugar a pessoa clicou
+    console.log(element)
+    if(element.classList.contains('start')) {
+        startClock()
+        $clock.classList.remove('paused')
+    }
+
+    if(element.classList.contains('pause')){
+        clearInterval(timer)
+        $clock.classList.add('paused')
+    }
+
+    if(element.classList.contains('reset')){
+        clearInterval(timer)
+        $clock.textContent = '00:00:00'
+        seconds = 0
+        $clock.classList.remove('paused')
+    }
 })
