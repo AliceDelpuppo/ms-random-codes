@@ -135,5 +135,16 @@ input {
     .local-add-tarefas {
         padding-left: 20px;
         font-size: 18px;
+        li {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .button-remove-item-tarefa {
+            width: 100px;
+            height: 30px;
+        }
     }
 }

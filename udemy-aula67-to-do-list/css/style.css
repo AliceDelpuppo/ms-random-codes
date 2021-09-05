@@ -110,5 +110,15 @@ input::placeholder {
   padding-left: 20px;
   font-size: 18px;
 }
+.container .local-add-tarefas li {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.container .local-add-tarefas .button-remove-item-tarefa {
+  width: 100px;
+  height: 30px;
+}
 
 /*# sourceMappingURL=style.css.map */
