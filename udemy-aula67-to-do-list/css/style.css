@@ -3,7 +3,7 @@
   --primary-color: rgb(17, 86, 102);
   --primary-color-darker: rgb(9, 48, 56);
   --bg-color-buttons: #113662;
-  --bg-color-input: #C3D9D5;
+  --bg-color-input: #c3d9d5;
 }
 
 * {
@@ -62,7 +62,7 @@ input::placeholder {
 }
 
 .container {
-  width: 640px;
+  width: 650px;
   margin: 50px auto;
   background: #fff;
   padding: 20px;
@@ -109,12 +109,19 @@ input::placeholder {
 .container .local-add-tarefas {
   padding-left: 20px;
   font-size: 18px;
+  counter-reset: section;
 }
 .container .local-add-tarefas li {
   margin-bottom: 10px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+}
+.container .local-add-tarefas li p {
+  width: 100%;
+}
+.container .local-add-tarefas li::before {
+  counter-increment: section;
+  content: counters(section, ".") ". ";
 }
 .container .local-add-tarefas .button-remove-item-tarefa {
   width: 100px;

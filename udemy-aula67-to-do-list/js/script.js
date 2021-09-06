@@ -8,9 +8,8 @@ function createTarefa(textInput) {
     const $li = createLi()
     // li.textContent = textInput
     const $p = document.createElement('p')
-    const tx = '- ' + textInput
-    const text = document.createTextNode(tx)
-    console.log(text)
+    const text = document.createTextNode(textInput)
+    // console.log(text)
     $p.appendChild(text)
     $li.appendChild($p)
     $localAddTarefas.appendChild($li)
@@ -32,22 +31,48 @@ function createButtonDelete($li) {
     $divButton.classList.add('button-generic')
     
     // $divButton.setAttribute('class', 'button-remove-item-tarefa button-generic')
-    
     $divButton.classList.add('button-remove-item-tarefa', 'button-generic')
     $divButton.setAttribute('title', 'Apagar esta tarefa')
-
 
     const text = document.createTextNode('Remover')
     $divButton.appendChild(text)
     $li.appendChild($divButton)
 }
 
-document.addEventListener('click', function(event){
-    const element = event.target
 
+// function saveTarefas(){
+//     const $lisTarefas = $localAddTarefas.querySelectorAll('li')
+//     const listTarefas = []
+
+//     $lisTarefas.forEach(function($liTarefa) {
+//         let textTarefa = $liTarefa.innerText
+
+//         textTarefa = textTarefa.replace('Remover', '')
+//         listTarefas.push(textTarefa)
+//     });
+//     const tarefasJASON = JSON.stringify(listTarefas)
+//     localStorage.setItem('listaDeTarefas', tarefasJASON)
+// }
+
+// function addSaveTarefas() {
+//     localStorage = localStorage.getItem('listaDeTarefas')
+//     const listTarefasArray = JSON.parse(localStorage)
+
+//     for (const tarefa of listTarefasArray) {
+//         createTarefa(tarefa)
+//     }
+// }
+
+function removeTarefa(element){
     if(element.classList.contains('button-remove-item-tarefa')){
         element.parentElement.remove()
     }
+}
+
+document.addEventListener('click', function(event){
+    const element = event.target
+
+    removeTarefa(element)    
 })
 
 
